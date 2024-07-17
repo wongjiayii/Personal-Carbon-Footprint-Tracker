@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Carbon Footprint Tracker</h1>
+            <p>Track the carbon footprint of your fashion choices and contribute to a sustainable future.</p>
+        </header>
+        <section id="landing-page">
+            <button id="start-button">Start Tracking Your Carbon Footprint</button>
+        </section>
+        <section id="input-form" style="display: none;">
+            <h2>Log Your Fashion Purchases</h2>
+            <form id="carbon-footprint-form">
+                <label for="clothing-type">Type of Clothing:</label>
+                <select id="clothing-type" name="clothingType" required>
+                    <option value="">Select...</option>
+                    <option value="Shirt">Shirt</option>
+                    <option value="Pants">Pants</option>
+                    <option value="Dress">Dress</option>
+                    <option value="Skirt">Skirt</option>
+                    <option value="Jacket">Jacket</option>
+                    <option value="Sweater">Sweater</option>
+                    <option value="Shoes">Shoes</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="material">Material:</label>
+                <select id="material" name="material" required>
+                    <option value="">Select...</option>
+                    <option value="Cotton">Cotton</option>
+                    <option value="Polyester">Polyester</option>
+                    <option value="Denim">Denim</option>
+                    <option value="Wool">Wool</option>
+                    <option value="Silk">Silk</option>
+                    <option value="Leather">Leather</option>
+                    <option value="Synthetic">Synthetic</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="brand">Brand (Optional):</label>
+                <input type="text" id="brand" name="brand">
+
+                <label for="purchase-date">Purchase Date:</label>
+                <input type="date" id="purchase-date" name="purchaseDate" required>
+
+                <label for="usage-frequency">Usage Frequency (times per week):</label>
+                <input type="number" id="usage-frequency" name="usageFrequency" required>
+
+                <label for="washing-frequency">Washing Frequency (times per week):</label>
+                <input type="number" id="washing-frequency" name="washingFrequency" required>
+
+                <button type="submit">Calculate My Carbon Footprint</button>
+            </form>
+        </section>
+        <section id="results-page" style="display: none;">
+            <h2>Your Carbon Footprint Results</h2>
+            <div class="chart-container">
+                <canvas id="bar-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="pie-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="line-chart"></canvas>
+            </div>
+            <div id="insights">
+                <h3>Insights and Tips</h3>
+                <p id="insights-text"></p>
+            </div>
+            <button id="reset-button">Log Another Purchase</button>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
